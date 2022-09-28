@@ -1,6 +1,8 @@
 import { pool } from './../db.js';
 
-//**TO DO: CHANGE TO EXPRESS PROMISE ROUTER FRAMEWORK */
+/**
+ * TODO: CHANGE TO EXPRESS PROMISE ROUTER FRAMEWORK
+ */
 
 export const getEmployees = async (req, res) => {
   try {
