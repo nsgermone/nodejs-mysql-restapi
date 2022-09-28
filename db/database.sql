@@ -18,3 +18,4 @@ INSERT INTO employee VALUES
     (4, 'Gus', 1000),
     (5, 'Ricky', 1000)
     
+SELECT * FROM companydb.employee;
