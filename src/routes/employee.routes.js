@@ -11,6 +11,6 @@ router.post('/employees', createEmployee)
 
 router.put('/employees', updateEmployee)
 
-router.delete('/employees', removeEmployee)
+router.delete('/employees/:id', removeEmployee)
 
 export default router;

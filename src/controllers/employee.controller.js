@@ -10,7 +10,7 @@ export const getEmployee = async (req, res) => {
     if (rows.length <= 0) return res.status(404).json({
         message: 'Employee not found'
     })
-    res.json(rows[0])
+    res.send('employee found')
 }
 
 export const createEmployee = async (req, res) => {
@@ -25,4 +25,10 @@ export const createEmployee = async (req, res) => {
 
 export const updateEmployee = (req, res) => res.send('updating a member')
 
-export const removeEmployee = (req, res) => res.send('deleting a member')
+export const removeEmployee = async (req, res) => {
+    const [result] = await pool.query('DELETE FROM employee WHERE id = ?', [req.params.id])
+    if (result.affectedRows <= 0) return res.status(404).json({
+        message: 'Employee not found'
+    })
+    res.sendStatus(204)
+}
