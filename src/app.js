@@ -1,14 +1,11 @@
 import express from 'express';
 import employeeRoutes from './routes/employee.routes.js';
 import indexRoutes from './routes/index.routes.js';
+import cors from 'cors';
 
 const app = express();
 
 app.use(express.json());
-
-app.use(cors({
-  origin: '*'
-}));
 
 app.use(indexRoutes);
 app.use('/api', employeeRoutes);
@@ -21,5 +18,9 @@ app.use((req, res, next) => {
     message: 'endpoint not found',
   });
 });
+
+app.use(cors({
+  origin: '*'
+}));
 
 export default app;
