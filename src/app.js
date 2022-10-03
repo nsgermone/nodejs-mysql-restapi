@@ -5,6 +5,8 @@ import cors from 'cors';
 
 const app = express();
 
+app.use(cors());
+
 app.use(express.json());
 
 app.use(indexRoutes);
@@ -18,9 +20,5 @@ app.use((req, res, next) => {
     message: 'endpoint not found',
   });
 });
-
-app.use(cors({
-  origin: '*'
-}));
 
 export default app;
