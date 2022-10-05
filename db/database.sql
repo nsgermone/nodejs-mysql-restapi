@@ -9,7 +9,7 @@ CREATE TABLE employee (
     photo_url VARCHAR(100) DEFAULT NULL,
     email VARCHAR(50) DEFAULT NULL,
     company VARCHAR(50) DEFAULT NULL,
-    group VARCHAR(50) DEFAULT NULL,
+    group_id VARCHAR(50) DEFAULT NULL,
     PRIMARY KEY (employee_id)
 );
 
